@@ -100,5 +100,18 @@ Hooray!
 '''
 
 
+##################################################
+# Type of error
+##################################################
+
+
+'''
+Syntax error
+Indentation error
+Type error
+Name error
+Logic error -- sometimes Python won't show any error message
+
+'''
 
 
