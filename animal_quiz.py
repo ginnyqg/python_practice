@@ -15,7 +15,7 @@ def check_guess(guess, answer):
         if guess.lower() == answer.lower():
             print('Correct answer')
             score += 1
-            still_guessing = Fale
+            still_guessing = False
         else:
             if attempt < 2:
                 guess = input('Sorry, wrong answer. Try again. ')
