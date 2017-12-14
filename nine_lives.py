@@ -6,8 +6,9 @@ secret_word = random.choice(word_bank)
 clue = list('?????')
 heart_symbol = u'\u2764'
 
-lives = 9
+
 guessed_word_correctly = False
+
 
 def update_clue(guessed_letter, secret_word, clue):
     i = 0
@@ -17,6 +18,17 @@ def update_clue(guessed_letter, secret_word, clue):
         i += 1
 
 
+difficulty = input('Choose difficulty level (type 1, 2, or 3): \n 1 Easy \n 2 Normal \n 3 Hard \n')
+difficulty = int(difficulty)
+
+if difficulty == 1:
+    lives = 12
+if difficulty == 2:
+    lives = 9
+else:
+    lives = 6
+
+   
 while lives > 0:
     print(clue)
     print('Lives Left: ' + heart_symbol * lives)
