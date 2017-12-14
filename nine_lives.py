@@ -1,13 +1,18 @@
 import random
 
-word_bank = ['apple', 'pizza', 'plane', 'shirt', 'teeth']
+word_bank = ['apple', 'pizza', 'plane', 'banana', 'teeth', 'glasses']
 secret_word = random.choice(word_bank)
 
-clue = list('?????')
 heart_symbol = u'\u2764'
 
-
 guessed_word_correctly = False
+
+
+clue = []
+i = 0
+while i < len(secret_word):
+    clue.append('?')
+    i += 1
 
 
 def update_clue(guessed_letter, secret_word, clue):
