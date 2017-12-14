@@ -14,13 +14,16 @@ while i < len(secret_word):
     clue.append('?')
     i += 1
 
+unknown_letters = len(secret_word)
 
-def update_clue(guessed_letter, secret_word, clue):
+def update_clue(guessed_letter, secret_word, clue, unknown_letters):
     i = 0
     while i < len(secret_word):
         if guessed_letter == secret_word[i]:
             clue[i] = guessed_letter
+            unknown_letters -= 1
         i += 1
+    return unknown_letters
 
 
 difficulty = input('Choose difficulty level (type 1, 2, or 3): \n 1 Easy \n 2 Normal \n 3 Hard \n')
@@ -44,10 +47,14 @@ while lives > 0:
         break
 
     if guess in secret_word:
-        update_clue(guess, secret_word, clue)
+        unknown_letters = update_clue(guess, secret_word, clue, unknown_letters)
     else:
         print('Incorrect. You lost a life.')
         lives -= 1
+        
+    if unknown_letters == 0:
+        guessed_word_correctly = True
+        break
 
 
 if guessed_word_correctly:
